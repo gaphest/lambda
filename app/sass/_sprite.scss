@@ -1,0 +1,184 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$-decoration-name: 'Decoration';
+$-decoration-x: 0px;
+$-decoration-y: 157px;
+$-decoration-offset-x: 0px;
+$-decoration-offset-y: -157px;
+$-decoration-width: 232px;
+$-decoration-height: 43px;
+$-decoration-total-width: 247px;
+$-decoration-total-height: 993px;
+$-decoration-image: 'sprite.png';
+$-decoration: (0px, 157px, 0px, -157px, 232px, 43px, 247px, 993px, 'sprite.png', 'Decoration', );
+$-divider-white-small-name: 'Divider-white--small';
+$-divider-white-small-x: 0px;
+$-divider-white-small-y: 0px;
+$-divider-white-small-offset-x: 0px;
+$-divider-white-small-offset-y: 0px;
+$-divider-white-small-width: 199px;
+$-divider-white-small-height: 19px;
+$-divider-white-small-total-width: 247px;
+$-divider-white-small-total-height: 993px;
+$-divider-white-small-image: 'sprite.png';
+$-divider-white-small: (0px, 0px, 0px, 0px, 199px, 19px, 247px, 993px, 'sprite.png', 'Divider-white--small', );
+$-divider-white-name: 'Divider-white';
+$-divider-white-x: 0px;
+$-divider-white-y: 49px;
+$-divider-white-offset-x: 0px;
+$-divider-white-offset-y: -49px;
+$-divider-white-width: 247px;
+$-divider-white-height: 24px;
+$-divider-white-total-width: 247px;
+$-divider-white-total-height: 993px;
+$-divider-white-image: 'sprite.png';
+$-divider-white: (0px, 49px, 0px, -49px, 247px, 24px, 247px, 993px, 'sprite.png', 'Divider-white', );
+$-divider-name: 'Divider';
+$-divider-x: 0px;
+$-divider-y: 103px;
+$-divider-offset-x: 0px;
+$-divider-offset-y: -103px;
+$-divider-width: 247px;
+$-divider-height: 24px;
+$-divider-total-width: 247px;
+$-divider-total-height: 993px;
+$-divider-image: 'sprite.png';
+$-divider: (0px, 103px, 0px, -103px, 247px, 24px, 247px, 993px, 'sprite.png', 'Divider', );
+$-logo-name: 'Logo';
+$-logo-x: 0px;
+$-logo-y: 230px;
+$-logo-offset-x: 0px;
+$-logo-offset-y: -230px;
+$-logo-width: 156px;
+$-logo-height: 92px;
+$-logo-total-width: 247px;
+$-logo-total-height: 993px;
+$-logo-image: 'sprite.png';
+$-logo: (0px, 230px, 0px, -230px, 156px, 92px, 247px, 993px, 'sprite.png', 'Logo', );
+$cook-name: 'cook';
+$cook-x: 0px;
+$cook-y: 772px;
+$cook-offset-x: 0px;
+$cook-offset-y: -772px;
+$cook-width: 219px;
+$cook-height: 221px;
+$cook-total-width: 247px;
+$cook-total-height: 993px;
+$cook-image: 'sprite.png';
+$cook: (0px, 772px, 0px, -772px, 219px, 221px, 247px, 993px, 'sprite.png', 'cook', );
+$ingredient-1-name: 'ingredient-1';
+$ingredient-1-x: 0px;
+$ingredient-1-y: 352px;
+$ingredient-1-offset-x: 0px;
+$ingredient-1-offset-y: -352px;
+$ingredient-1-width: 110px;
+$ingredient-1-height: 110px;
+$ingredient-1-total-width: 247px;
+$ingredient-1-total-height: 993px;
+$ingredient-1-image: 'sprite.png';
+$ingredient-1: (0px, 352px, 0px, -352px, 110px, 110px, 247px, 993px, 'sprite.png', 'ingredient-1', );
+$ingredient-2-name: 'ingredient-2';
+$ingredient-2-x: 0px;
+$ingredient-2-y: 492px;
+$ingredient-2-offset-x: 0px;
+$ingredient-2-offset-y: -492px;
+$ingredient-2-width: 110px;
+$ingredient-2-height: 110px;
+$ingredient-2-total-width: 247px;
+$ingredient-2-total-height: 993px;
+$ingredient-2-image: 'sprite.png';
+$ingredient-2: (0px, 492px, 0px, -492px, 110px, 110px, 247px, 993px, 'sprite.png', 'ingredient-2', );
+$ingredient-3-name: 'ingredient-3';
+$ingredient-3-x: 0px;
+$ingredient-3-y: 632px;
+$ingredient-3-offset-x: 0px;
+$ingredient-3-offset-y: -632px;
+$ingredient-3-width: 110px;
+$ingredient-3-height: 110px;
+$ingredient-3-total-width: 247px;
+$ingredient-3-total-height: 993px;
+$ingredient-3-image: 'sprite.png';
+$ingredient-3: (0px, 632px, 0px, -632px, 110px, 110px, 247px, 993px, 'sprite.png', 'ingredient-3', );
+$spritesheet-width: 247px;
+$spritesheet-height: 993px;
+$spritesheet-image: 'sprite.png';
+$spritesheet-sprites: ($-decoration, $-divider-white-small, $-divider-white, $-divider, $-logo, $cook, $ingredient-1, $ingredient-2, $ingredient-3, );
+$spritesheet: (247px, 993px, 'sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/// Georgia fonts stack.
+///
+/// @type List
+
+$georgia: "Georgia", "Cambria", "Times New Roman", "Times", serif;
+
+/// Helvetica fonts stack.
+///
+/// @type List
+
+$helvetica: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+
+/// Lucida Grande fonts stack.
+///
+/// @type List
+
+$lucida-grande: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
+
+/// Monospace fonts stack.
+///
+/// @type List
+
+$monospace: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+
+/// Verdana fonts stack.
+///
+/// @type List
+
+$verdana: "Verdana", "Geneva", sans-serif;

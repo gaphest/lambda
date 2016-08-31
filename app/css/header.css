@@ -1,0 +1,246 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+body {
+  font-family: 'Gentium Book Basic', serif;
+  position: relative;
+  overflow-x: hidden;
+  min-width: 320px; }
+  @media (max-width: 320px) {
+    body {
+      overflow-x: auto; } }
+
+.active-href {
+  transition: all 0.6s ease;
+  color: #DAB33E !important; }
+
+.to-top {
+  font-size: 24px;
+  position: fixed;
+  z-index: 1000;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6); }
+  @media (max-width: 768px) {
+    .to-top {
+      font-size: 18px;
+      padding: 5px; } }
+  .to-top a {
+    transition: all 0.6s ease;
+    color: #DAB33E; }
+    .to-top a:hover {
+      color: #FFFFFF; }
+
+.page-header {
+  position: relative;
+  background-image: url(../img/top-bg.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover; }
+  .page-header__logo {
+    background-image: url(../img/sprite.png);
+    background-position: 0px -230px;
+    width: 156px;
+    height: 92px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    display: inline-block;
+    float: left; }
+    @media (max-width: 240px) {
+      .page-header__logo {
+        width: 100px;
+        background-position: 1px -128px;
+        background-size: 158%; } }
+    .page-header__logo:hover {
+      cursor: pointer;
+      opacity: 0.8; }
+    @media (max-width: 180px) {
+      .page-header__logo {
+        display: none; } }
+  .page-header__title {
+    font-family: 'Yeseva One', cursive;
+    font-size: 90px;
+    font-weight: lighter;
+    position: relative;
+    margin-top: 210px;
+    margin-bottom: 100px;
+    text-align: center;
+    color: #FFFFFF; }
+    @media (max-width: 1000px) {
+      .page-header__title {
+        font-size: 60px;
+        margin-top: 125px; } }
+    @media (max-width: 700px) {
+      .page-header__title {
+        font-size: 45px; } }
+    @media (max-width: 500px) {
+      .page-header__title {
+        font-size: 36px; } }
+    .page-header__title::after {
+      background-image: url(../img/sprite.png);
+      background-position: 0px -157px;
+      width: 232px;
+      height: 43px;
+      position: absolute;
+      content: "";
+      background-repeat: no-repeat;
+      top: 108%;
+      left: 50%;
+      transform: translate(-50%, 0px); }
+  .page-header::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 159px;
+    content: "";
+    background-image: url(../img/top-bg-shadow.png);
+    background-size: cover; }
+
+.navbar-toggle {
+  margin-top: 40px; }
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 135px;
+  border: none;
+  background-color: transparent; }
+  @media (max-width: 1000px) {
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.6); } }
+
+.social {
+  display: inline-block;
+  float: right;
+  width: 140px;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  @media (max-width: 1000px) {
+    .social {
+      display: none; } }
+  .social i {
+    font-size: 22px;
+    padding-right: 6px;
+    padding-left: 7px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    color: #DAB33E; }
+    .social i:hover {
+      color: #FFFFFF; }
+
+.collapse {
+  float: right;
+  overflow-x: hidden;
+  padding: 0;
+  text-align: center; }
+  @media (max-width: 1000px) {
+    .collapse {
+      float: none; } }
+
+.navbar-header {
+  height: 110px; }
+
+.navbar-inverse .navbar-nav {
+  display: inline-block; }
+
+.navbar-inverse .navbar-nav > li {
+  display: inline-block; }
+  @media (max-width: 1000px) {
+    .navbar-inverse .navbar-nav > li {
+      width: 49%; } }
+  @media (max-width: 260px) {
+    .navbar-inverse .navbar-nav > li {
+      width: 100%; } }
+
+.navbar-inverse .navbar-nav > li > a {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  font-family: 'Gentium Book Basic', serif;
+  font-size: 21px;
+  font-weight: bold;
+  position: relative;
+  float: right;
+  padding-right: 24px;
+  padding-left: 24px;
+  color: #FFFFFF; }
+  @media (max-width: 1250px) {
+    .navbar-inverse .navbar-nav > li > a {
+      padding-right: 14px;
+      padding-left: 14px; } }
+  @media (max-width: 1000px) {
+    .navbar-inverse .navbar-nav > li > a {
+      float: none;
+      padding: 10px; } }
+  .navbar-inverse .navbar-nav > li > a::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    content: "";
+    transition: all 0.6s ease;
+    transform: translate(-50%, 0px);
+    background-color: #FFFFFF; }
+    @media (max-width: 1000px) {
+      .navbar-inverse .navbar-nav > li > a::before {
+        display: none; } }
+  .navbar-inverse .navbar-nav > li > a:hover {
+    cursor: pointer; }
+    @media (max-width: 1000px) {
+      .navbar-inverse .navbar-nav > li > a:hover {
+        transition: all 0.6s ease;
+        color: #DAB33E; } }
+    .navbar-inverse .navbar-nav > li > a:hover::before {
+      width: 100%; }

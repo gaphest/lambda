@@ -1,0 +1,868 @@
+@import "vars.scss";
+@import "../css/normalize";
+@import "_mixins";
+
+body {
+  font-family : 'Gentium Book Basic', serif;
+
+  position : relative;
+
+  overflow-x : hidden;
+
+  min-width : 320px;
+  @media (max-width: 320px) {
+    overflow-x : auto;
+  }
+}
+
+.active-href {
+  transition : all 0.6s ease;
+
+  color : $yellow-color!important;
+}
+
+.to-top {
+  font-size : 24px;
+
+  position : fixed;
+  z-index : 1000;
+  right : 20px;
+  bottom : 20px;
+
+  padding : 10px;
+
+  background-color : rgba(0,0,0,0.6);
+  @media (max-width: 768px) {
+    font-size : 18px;
+
+    padding : 5px;;
+  }
+  a {
+    transition : all 0.6s ease;
+
+    color : $yellow-color;
+
+    &:hover {
+      color : #FFFFFF;
+    }
+  }
+}
+
+.page-header {
+  position : relative;
+
+  background-image : url(../img/top-bg.jpg);
+  background-attachment : fixed;
+  background-position : center center;
+  background-size : cover;
+  &__logo {
+    @include sprite($-logo);
+    @include padding-top-bottom(110px,92px);
+
+    display : inline-block;
+    vertical-align : top;
+    float : left;
+    @media (max-width: 240px) {
+      width : 100px;
+
+      background-position : 1px -128px;
+      background-size : 158%;
+    }
+    &:hover {
+      cursor : pointer;
+
+      opacity : 0.8;
+    }
+    @media (max-width: 180px) {
+      display : none;
+    }
+  }
+  &__title {
+    font-family : 'Yeseva One', cursive;
+    font-size : 90px;
+    font-weight : lighter;
+
+    position : relative;
+
+    margin-top : 100px+110px;
+    margin-bottom : 100px;
+
+    text-align : center;
+
+    opacity : 0;
+    color : #FFFFFF;
+    @media (max-width:1000px) {
+      font-size : 60px;
+
+      margin-top : 125px;
+    }
+    @media (max-width:700px) {
+      font-size : 45px;
+    }
+    @media (max-width:500px) {
+      font-size : 36px;
+    }
+    &::after {
+      @include before-sprite($-decoration);
+
+      top : 105%;
+      left : 50%;
+
+      transform : translate(-50%, 0px);
+    }
+    &.on {
+      opacity : 1;
+    }
+  }
+  &::before {
+    position : absolute;
+    top : 0;
+    left : 0;
+
+    width : 100%;
+    height : 159px;
+
+    content : "";
+
+    background-image : url(../img/top-bg-shadow.png);
+    background-size : cover;
+  }
+}
+
+.navbar-toggle {
+  margin-top : 40px;
+}
+
+.navbar {
+  position : fixed;
+  z-index : 100;
+  top : 0;
+
+  overflow-x : hidden;
+
+  width : 100%;
+  min-width : 135px;
+
+  border : none;
+  background-color : transparent;
+  @media (max-width: 1000px) {
+    background-color : rgba(0,0,0,0.6);
+  }
+}
+
+.social {
+  display : inline-block;
+  vertical-align : top;
+  float : right;
+
+  width : 140px;
+  padding-top : 40px;
+  padding-bottom : 40px;
+  @media (max-width: 1000px) {
+    display : none;
+  }
+  i {
+    font-size : 22px;
+
+    padding-right : 6px;
+    padding-left : 7px;
+
+    cursor : pointer;
+    transition : all 0.6s ease;
+
+    color : $yellow-color;
+    &:hover {
+      color : #FFFFFF;
+    }
+  }
+}
+
+.collapse {
+  float : right;
+  overflow-x : hidden;
+
+  padding : 0;
+
+  text-align : center;
+  @media (max-width: 1000px) {
+    float : none;
+  }
+}
+
+.navbar-header {
+  height : 110px;
+}
+
+.navbar-inverse .navbar-nav {
+  display : inline-block;
+  vertical-align : top;
+}
+
+.navbar-inverse .navbar-nav > li {
+  display : inline-block;
+  vertical-align : top;
+  @media (max-width: 1000px) {
+    width : 49%;
+  }
+  @media (max-width: 260px) {
+    width : 100%;
+  }
+}
+.navbar-inverse .navbar-nav > li > a {
+  @include padding-top-bottom(110px, 20px);
+  font-family : 'Gentium Book Basic', serif;
+  font-size : 21px;
+  font-weight : bold;
+
+  position : relative;
+
+  float : right;
+
+  padding-right : 24px;
+  padding-left : 24px;
+
+  color : #FFFFFF;
+
+  @media (max-width: 1250px) {
+    padding-right : 14px;
+    padding-left : 14px;
+  }
+  @media (max-width: 1000px) {
+    float : none;
+
+    padding : 10px;
+  }
+  &::before {
+    position : absolute;
+    top : 0;
+    left : 50%;
+
+    width : 0;
+    height : 2px;
+
+    content : "";
+    transition : all 0.6s ease;
+    transform : translate(-50%, 0px);
+
+    background-color : #FFFFFF;
+    @media (max-width: 1000px) {
+      display : none;
+    }
+  }
+  &:hover {
+    cursor : pointer;
+    @media (max-width: 1000px) {
+      transition : all 0.6s ease;
+
+      color : $yellow-color;
+    }
+    &::before {
+      width : 100%;
+    }
+  }
+}
+
+.btn {
+  @include padding-top-bottom(60px,24px);
+  @include padding-horizontal(230px,110px);
+  font-family : 'Lato', sans-serif;
+  font-size : 16px;
+  line-height : 24px;
+
+  transition : all 0.7s ease;
+  text-transform : uppercase;
+
+  opacity : 0;
+  color : #FFFFFF;
+  border : none;
+  &.on {
+    opacity : 1;
+  }
+  &:first-child {
+    margin-right : 30px;
+  }
+  @media (max-width: 520px) {
+    font-size : 14px;
+
+    padding : 15px;
+  }
+  &--table {
+    background-color : rgba(0,0,0,0.4);
+    &:hover {
+      color : #FFFFFF;
+      background-color : rgba(0,0,0,0.6);
+    }
+  }
+  &--menu {
+    background-color : rgba(255,255,255,0.25);
+    box-shadow : inset 0 0 0 1px #FFFFFF;
+    &:hover {
+      color : #FFFFFF;
+      background-color : rgba(255,255,255,0.5);
+    }
+  }
+  &__wrap {
+    margin-bottom : 140px;
+
+    text-align : center;
+    @media (max-width: 1000px) {
+      margin-bottom : 80px;
+    }
+    @media (max-width: 520px) {
+      margin-bottom : 50px;
+    }
+  }
+}
+
+.about {
+  position : relative;
+
+  padding-top : 50px;
+
+  background-image : url(../img/pattern-1.jpg);
+  @media (max-width: 1000px) {
+    padding-top : 0;
+  }
+  &__dish {
+    width : 100%;
+    max-width : 625px;
+
+    transition : all 1s ease;
+    transform : translateX(100%);
+
+    opacity : 0;
+    @media (max-width: 992px) {
+      margin-top : 140px;
+    }
+    @media (max-width: 768px) {
+      display : none;
+    }
+    &.on {
+      transform : translateX(0%);
+
+      opacity : 1;
+    }
+  }
+}
+
+.overlay {
+  position : absolute;
+  top : 0;
+
+  width : 100%;
+  height : 100%;
+
+  content : "";
+
+  background : linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.08) 100%);
+  box-shadow : inset 0 0 60px 30px rgba(0,0,0,0.14);
+}
+
+.info-block {
+  position : relative;
+
+  margin-top : 45px;
+  margin-bottom : 100px;
+
+  text-align : center;
+  @media (max-width: 1250px) {
+    margin-bottom : 40px;
+  }
+  &__img {
+    @include sprite($cook);
+
+    position : relative;
+    left : 50%;
+
+    margin-top : 45px;
+    margin-left : -60px;
+  }
+}
+
+.reg-text {
+  font-family : 'Lato', sans-serif;
+  font-size : 16px;
+  line-height : 24px;
+
+  text-align : center;
+  &--white {
+    color : #FFFFFF;
+  }
+  &--gray {
+    color : #DCDCDC;
+    span {
+      font-weight : bold;
+
+      color : #FFFFFF;
+    }
+  }
+}
+
+.decor-title {
+  font-family : 'Yeseva One', cursive;
+  font-size : 36px;
+  font-weight : lighter;
+
+  position : relative;
+
+  margin-bottom : 60px;
+
+  text-align : center;
+
+  color : $yellow-color;
+  @media (max-width: 500px) {
+    font-size : 30px;
+  }
+  &::after {
+    @include before-sprite($-divider);
+
+    top : 120%;
+    left : 50%;
+
+    margin-left : -123px;
+  }
+  &--white {
+    margin-top : 0;
+
+    color : #FFFFFF;
+    &::after {
+      @include before-sprite($-divider-white);
+
+      top : 120%;
+      left : 50%;
+
+      margin-left : -123px;
+    }
+  }
+  &--small {
+    font-size : 21px;
+
+    margin-bottom : 50px;
+
+    color : #FFFFFF;
+    &::after {
+      @include before-sprite($-divider-white-small);
+
+      top : 135%;
+      left : 50%;
+
+      margin-left : -99px;
+    }
+  }
+}
+
+.ingredients {
+  padding : 100px 0;
+
+  background-image : url(../img/flower-bg.jpg);
+  background-repeat : no-repeat;
+  background-attachment : fixed;
+  background-size : cover;
+  @media (max-width: 1250px) {
+    padding : 75px 0;
+  }
+  @media (max-width: 768px) {
+    padding : 50px 0;
+  }
+}
+
+
+.promo {
+  margin-right : 25px;
+  padding : 70px;
+
+  text-align : center;
+
+  background-color : rgba(0,0,0,0.6);
+
+  @media (max-width: 1250px) {
+    margin-right : 0;
+    padding : 50px;
+  }
+  @media (max-width: 500px) {
+    padding : 35px 35px 0 35px;
+  }
+  &__ingr-list {
+    display : inline-block;
+    vertical-align : top;
+
+    margin-top : 50px;
+    margin-bottom : 5px;
+    @media (max-width: 1000px) {
+      margin-top : 20px;
+    }
+  }
+  &__ingr-item {
+    display : inline-block;
+    vertical-align : top;
+
+    transition : all 0.6s ease;
+
+    opacity : 0;
+    &.on {
+      opacity : 1;
+    }
+
+    &:first-child {
+      @include sprite($ingredient-1);
+
+      margin-left : 16px;
+      @media (max-width: 1000px) and (min-width: 768px) {
+        margin-left : 0;
+      }
+    }
+    &:nth-child(2) {
+      @include sprite($ingredient-2);
+
+      margin : 0 30px;
+      @media (max-width: 1000px) and (min-width: 768px) {
+        margin : 0 15px;
+      }
+    }
+    &:last-child {
+      @include sprite($ingredient-3);
+
+      margin-right : 16px;
+      @media (max-width: 1000px) and (min-width: 768px) {
+        margin-right : 0;
+      }
+    }
+    @media (max-width: 600px) {
+      margin : 0!important;
+    }
+    @media (max-width: 500px) {
+      display : none;
+    }
+  }
+}
+
+.menu {
+  position : relative;
+
+  padding : 60px 0;
+
+  background-image : url(../img/pattern.jpg);
+  @media (max-width: 1250px) {
+    padding : 50px 0;
+  }
+  @media (max-width: 768px) {
+    padding : 35px 0;
+  }
+
+  .col-xs-6 {
+    @media (max-width: 500px) {
+      width : 100%;
+    }
+  }
+
+  &__left {
+    padding-right : 57px;
+    padding-left : 110px;
+    @media (max-width: 1250px) {
+      padding-right : 20px;
+      padding-left : 0;
+    }
+    @media (max-width: 600px) {
+      padding : 0;
+    }
+  }
+
+  &__right {
+    padding-right : 110px;
+    padding-left : 57px;
+    @media (max-width: 1250px) {
+      padding-right : 0;
+      padding-left : 20px;
+    }
+    @media (max-width: 600px) {
+      padding : 0;
+    }
+  }
+}
+
+.products {
+  padding : 0;
+
+  list-style : none;
+}
+
+.products-item {
+  position : relative;
+
+  margin-bottom : 20px;
+  padding : 8px;
+
+  &--special {
+    border : 1px solid $yellow-color;
+    &::before {
+      font-family : Lato,cursive;
+      font-size : 14px;
+
+      position : absolute;
+      top : -21px;
+      right : -1px;
+
+      padding-right : 12px;
+      padding-left : 12px;
+
+      content : "Special";
+
+      color : #FFFFFF;
+      background-color : $yellow-color;
+    }
+  }
+
+  &__title ,&__price {
+    font-family : 'Yeseva One', cursive;
+    font-size : 21px;
+    line-height : 24px;
+
+    color : $yellow-color;
+    @media (max-width: 600px) {
+      font-size : 18px;
+    }
+  }
+  &__head {
+    padding-bottom : 10px;
+
+    border-bottom : 1px solid $yellow-color;
+  }
+  &__price {
+    float : right;
+  }
+  &__text {
+    @extend .reg-text;
+
+    margin-top : 10px;
+    margin-bottom : 0;
+
+    text-align : left;
+  }
+}
+
+.review {
+  padding : 100px 0;
+
+  background-image : url(../img/meat-bg.jpg);
+  background-repeat : no-repeat;
+  background-attachment : fixed;
+  background-size : cover;
+
+  @media (max-width: 1250px) {
+    padding : 75px 0;
+  }
+  @media (max-width: 768px) {
+    padding : 50px 0;
+  }
+  &__article {
+    @extend .promo;
+    @media (max-width: 500px) {
+      padding : 25px;
+    }
+  }
+  &__text {
+    font-size : 25px;
+    font-weight : bold;
+    line-height : 45px;
+
+    color : #DDE0DF;
+    @media (max-width: 768px) {
+      font-size : 20px;
+      line-height : 32px;
+    }
+    @media (max-width: 400px) {
+      font-size : 18px;
+      line-height : 26px;
+    }
+  }
+  &__author {
+    font-family : Lato,cursive;
+    font-size : 18px;
+
+    padding : 10px 0;
+
+    color : #FFFFFF;
+  }
+}
+
+.reservation {
+  position : relative;
+
+  padding : 60px 0 100px 0;
+
+  background-image : url(../img/pattern-1.jpg);
+  @media (max-width: 1250px) {
+    padding : 50px 0 90px 0;
+  }
+  @media (max-width: 768px) {
+    padding : 35px 0 75px 0;
+  }
+  &__pictures-wrap {
+    @extend .clearfix;
+
+    padding : 30px 5px 0 0;
+    @media (max-width: 1250px) {
+      padding : 100px 5px 0 0;
+    }
+    @media (max-width: 991px) {
+      display : none;
+    }
+  }
+
+  &__picture {
+    display : inline-block;
+    vertical-align : top;
+
+    width : 100%;
+    max-width : 270px;
+
+    transition : all 0.7s ease;
+
+    opacity : 0;
+    &.on {
+      opacity : 1;
+    }
+  }
+
+  &__content {
+    padding : 0 100px 0 60px;
+
+    text-align : center;
+    @media (max-width: 1250px) {
+      padding : 0;
+    }
+  }
+}
+
+.form {
+  text-align : center;
+  &__item {
+    width : 100%;
+    margin-bottom : 30px;
+
+    text-align : left;
+  }
+  span {
+    font-size : 14px;
+
+    color : $yellow-color;
+  }
+  input[type='text'] ,select {
+    font-size : 16px;
+
+    position : relative;
+
+    width : 100%;
+    height : 35px;
+    padding-right : 10px;
+    padding-left : 10%;
+
+    color : #3C3C3C;
+    border : 1px solid rgba(0, 0, 0, 0.1);
+    background-color : rgba(255, 255, 255, 0.6);
+    &:focus {
+      border-color : #CC9900;
+      outline : none;
+      box-shadow : none;
+    }
+  }
+  input.calendar {
+    padding-right : 23%;
+  }
+  i.icon-calendar {
+    position : absolute;
+    top : 33%;
+    right : 15%;
+  }
+
+  select {
+    color : #A9A9A9;
+
+    option:first-child {
+      display : none;
+    }
+    option {
+      color : #000000;
+    }
+  }
+
+  &__submit {
+    @include padding-top-bottom(35px,22px);
+    @include padding-horizontal(200px,70px);
+    font-size : 16px;
+
+    margin-top : 5px;
+
+    color : #FFFFFF;
+    border : none;
+    background-color : $yellow-color;
+  }
+}
+
+.page-footer {
+  background-color : #191919;
+
+  .col-xs-4 {
+    padding : 45px 0;
+    @media (max-width: 615px) {
+      width : 100%;
+      padding : 10px 0;
+    }
+  }
+}
+
+.about-us {
+  padding : 0 25px;
+  @media (max-width: 1250px) {
+    padding : 0;
+  }
+}
+
+.open {
+  text-align : center;
+}
+
+.contacts {
+  display : inline-block;
+  vertical-align : top;
+
+  margin-top : 35px;
+  padding : 0;
+
+  list-style : none;
+
+  text-align : center;
+  @media (max-width: 615px) {
+    margin-top : 0;
+  }
+  &__item {
+    font-size : 110%;
+
+    display : inline-block;
+    vertical-align : top;
+    a {
+      transition : all 0.6s ease;
+
+      color : #FFFFFF;
+      &:hover {
+        color : $yellow-color;
+      }
+    }
+  }
+}
+
+.location {
+  text-align : center;
+}
+
+.visible {
+  visibility : visible !important;
+}
+
+.blackish {
+  background-color : rgba(0,0,0,0.6);
+}
+
+
+//ALWAYS END
+@import "media";
